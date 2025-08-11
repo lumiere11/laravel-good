@@ -28,6 +28,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/laravel-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/laravel-app:${{ github.ref_name }}
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/laravel-app:cache
           cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/laravel-app:cache,mode=max
