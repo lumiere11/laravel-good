@@ -1,7 +1,7 @@
 # Stage 1: Build
 FROM composer:2 as vendor
 WORKDIR /app
-COPY composer.json composer.lock ./
+COPY composer.json composer.lock artisan ./
 RUN composer install --no-dev --optimize-autoloader --prefer-dist
 COPY . .
 
